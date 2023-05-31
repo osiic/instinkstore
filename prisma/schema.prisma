@@ -12,22 +12,23 @@ datasource db {
 
 model Product {
   id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   
+  title     String
   slug      String   @unique
   price     Int      @default(0)
-  image     String?
   content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
+  image     String?  @default("https://i.pinimg.com/564x/0c/26/d6/0c26d67bcca373a4d299a277035fa119.jpg")
   authorId  Int
+  author    User     @relation(fields: [authorId], references: [id])
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  Image   String?
-  posts   Product[]
+  id       Int       @id @default(autoincrement())
+  name     String
+  email    String    @unique
+  password String
+  image    String?   @default("https://i.pinimg.com/564x/a5/48/5f/a5485f63d6fae4d01c350aa371cd46f5.jpg")
+  posts    Product[]
 }
