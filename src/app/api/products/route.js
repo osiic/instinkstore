@@ -1,30 +1,54 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const slug = searchParams.get('slug');
-  const id = searchParams.get('id');
+  const slug = searchParams.get("slug");
+  const search = searchParams.get("search");
 
-  if (!id && !slug) {
-    return NextResponse.json({slug, id},{status:400});
+  let where = { published: true };
+
+  if (slug) {
+    where = {
+      ...where,
+      slug,
+    };
   }
-  
-  return NextResponse.json({slug, id});
-}
 
-export async function POST(request) {
-  const { searchParams } = new URL(request.url);
-  const slug = searchParams.get('slug');
-  const id = searchParams.get('id');
-  
-  return NextResponse.json({slug, id},{status: 201});
-}
+  if (search) {
+    where = {
+      ...where,
+      OR: [
+        {
+          title: {
+            contains: search,
+          },
+        },
+        {
+          content: {
+            contains: search,
+          },
+        },
+      ],
+    };
+  }
 
-export async function PUT(request) {
-  const { searchParams } = new URL(request.url);
-  const slug = searchParams.get('slug');
-  const id = searchParams.get('id');
-  
-  return NextResponse.json({slug, id},{status: 201});
-}
+  const result = await prisma.product.findMany({
+    where,
+  });
 
+  if (result.length <= 0) {
+    return NextResponse.json(
+      {
+        message: "gak ada bang",
+      },
+      {
+        status: 404,
+      }
+    );
+  }
+
+  return NextResponse.json(result);
+}
