@@ -4,32 +4,41 @@ generator client {
 
 datasource db {
   provider     = "mysql"
-  url          = env("DATABASE_URL")
   relationMode = "prisma"
+  url          = env("DATABASE_URL")
 }
 
 model Product {
-  title     String   @default("Product")
-  slug      String   @unique
-  price     Int      @default(0)
-  discount  Int?     @default(0)
-  content   String?  @default("gak ada bang")
-  image     String?  @default("https://i.pinimg.com/564x/0c/26/d6/0c26d67bcca373a4d299a277035fa119.jpg")
-  published Boolean  @default(false)
-  authorId  Int      @default(1)
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  author    User     @relation(fields: [authorId], references: [id])
+  id         Int      @id @default(autoincrement())
+  title      String   @default("Product")
+  slug       String   @unique
+  price      Int      @default(0)
+  discount   Int?     @default(0)
+  content    String?  @default("gak ada bang")
+  image      String?  @default("https://i.pinimg.com/564x/0c/26/d6/0c26d67bcca373a4d299a277035fa119.jpg")
+  published  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int      @default(1)
+  user       User     @relation(fields: [userId], references: [id])
+  userId     Int      @default(1)
 
-  @@index([authorId])
+  @@index([categoryId])
+  @@index([userId])
 }
 
 model User {
+  id       Int       @id @default(autoincrement())
   name     String    @default("Instink Store")
   email    String    @unique @default("instinkstore.offcl@gmail.com")
   password String    @default("123")
   image    String?   @default("https://i.pinimg.com/564x/a5/48/5f/a5485f63d6fae4d01c350aa371cd46f5.jpg")
+  product  Product[]
+}
+
+model Category {
   id       Int       @id @default(autoincrement())
-  posts    Product[]
+  category String    @unique
+  product  Product[]
 }
