@@ -1,4 +1,4 @@
-export function Products() {
+export function HomeProducts() {
   return (
     <section className="px-[7%] py-5 bg-sky-300 min-h-screen">
       <h3 className="font-normal text-base">Products</h3>
