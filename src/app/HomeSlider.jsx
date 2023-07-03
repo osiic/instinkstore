@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 
 export function HomeSlider() {
   return (
-    <section className="pt-12 pb-3 px-[7%]">
+    <section className="px-[7%] ">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{
@@ -26,7 +26,7 @@ export function HomeSlider() {
         {[1, 2, 3, 4, 5].map((item, index) => (
           <SwiperSlide
             key={index}
-            className="w-full aspect-[10/4] rounded-md overflow-hidden"
+            className="w-full aspect-[10/4] lg:aspect-[10/3] rounded-md overflow-hidden"
           >
             <HomeSlide
               bannerUrl="https://media.discordapp.net/attachments/885110057736474634/1122024371939192904/Rectangle_3.png"
