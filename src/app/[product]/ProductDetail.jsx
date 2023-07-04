@@ -9,7 +9,7 @@ import { FiShare2, FiMessageCircle } from "react-icons/fi";
 export function ProductDetail({ product }) {
   return (
     <section className="mx-auto px-[7%]">
-      <div className="flex flex-col flex-wrap justify-between gap-2 md:flex-row">
+      <div className="flex flex-col flex-wrap justify-between gap-2 md:gap-0   md:flex-row">
         <Image
           width={
             product.attributes.image.data[0].attributes.formats.medium.width
@@ -19,7 +19,7 @@ export function ProductDetail({ product }) {
           }
           src={product.attributes.image.data[0].attributes.formats.medium.url}
           alt={product.attributes.title}
-          className="w-full aspect-square rounded-md shadow-xl object-cover md:w-[48%]"
+          className="w-full h-full aspect-square rounded-md shadow-xl object-cover md:w-[48%]"
         />
 
         <div className="md:w-[48%] w-full flex flex-col md:py-4 gap-1 lg:gap-2 xl:gap-3">
@@ -111,8 +111,8 @@ export function ProductDetail({ product }) {
           </div>
         </div>
 
-        <div className="py-4">
-          <ReactMarkdown className="prose leading-5 prose-slate">
+        <div className="py-4 lg:pt-8">
+          <ReactMarkdown className="prose leading-5 prose-slate md:prose-base md:leading-6 lg:prose-lg lg:leading-6">
             {product.attributes.content}
           </ReactMarkdown>
         </div>
