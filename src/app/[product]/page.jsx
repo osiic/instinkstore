@@ -26,8 +26,8 @@ export default function ProductPage() {
             className="w-full aspect-square rounded-md shadow-xl object-cover md:w-[48%]"
           />
 
-          <div className="md:w-[48%] flex flex-col md:py-4 gap-1 lg:gap-2 xl:gap-3">
-            <p className="text-sm text-slate-500 overflow-hidden h-5">
+          <div className="md:w-[48%] w-full flex flex-col md:py-4 gap-1 lg:gap-2 xl:gap-3">
+            <p className="text-sm text-slate-500 truncate w-full">
               Discord {">"} Discord Nitro {">"} Nitro Gratis 1 Bulain Lorem
               ipsum dolor sit amet consectetur adipisicing elit.
             </p>

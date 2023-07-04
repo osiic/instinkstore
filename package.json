@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@develoka/angka-rupiah-js": "^1.0.3",
     "@prisma/client": "^4.15.0",
     "@radix-ui/react-select": "^1.2.2",
     "autoprefixer": "10.4.14",
