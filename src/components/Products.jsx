@@ -6,7 +6,7 @@ export function Products({ products}) {
   
   if (!products || products.length == 0) {
     return <div className="flex flex-col justify-center items-center h-[70vh] gap-2">
-      <Image src="/loading.gif" alt="loading" width="256" height="256" className="w-64object-cover" />
+      <Image src="/Loading.gif" alt="loading" width="256" height="256" className="w-64object-cover" />
       <h3 className="text-slate-800 text-lg font-normal">Kek nya yang kao cari kagak ada</h3>
     </div>;
   }
