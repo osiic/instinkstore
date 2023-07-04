@@ -9,11 +9,11 @@ export default async function ProductPage({ params }) {
     { cache: "no-store" }
   );
   
-  if (!product.data || product.data.length == 0) {
+  if (product.data.length == 0) {
     return (
       <div className="flex flex-col justify-center items-center h-screen gap-2">
         <Image
-          src="/loading.gif"
+          src="/Loading.gif"
           alt="loading"
           width="256"
           height="256"
