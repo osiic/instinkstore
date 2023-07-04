@@ -25,7 +25,7 @@ export function Navbar() {
         />
 
         <div
-          className={`absolute w-full md:w-9/12 right-0 flex justify-center items-center px-[7%] transition-all duration-300 ${
+          className={`absolute w-full md:w-9/12 right-0 flex justify-center items-center px-[6.5%] transition-all duration-300 ${
             !search && "-top-20"
           }`}
         >

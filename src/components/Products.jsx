@@ -26,7 +26,7 @@ export function Products({products}) {
               <p className="text-xl font-medium text-slate-950">{toRupiah(item.attributes.price,{floatingPoint: 0})}</p>
               <div className={`flex gap-[2px] items-center ${item.attributes.discount == 0 && "hidden"}`}>
                 <span className='px-1 py-[0.125rem] rounded-sm bg-[#ADFFFA] text-xs font-semibold text-[#004945]' >
-                {item.attributes.discount}
+                {item.attributes.discount}%
                 </span>
                 <p className=" text-slate-500 line-through text-sm font-normal -mt-[0.125rem]">
                 {toRupiah(Math.round(item.attributes.price / (100 - item.attributes.discount) * 100),{floatingPoint: 0})}
