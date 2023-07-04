@@ -25,8 +25,8 @@ export function Navbar() {
         />
 
         <div
-          className={`absolute w-full md:w-9/12 right-0 flex justify-center items-center px-[6.5%] transition-all duration-300 ${
-            !search && "-top-20"
+          className={`absolute w-full md:w-6/12 flex justify-center items-center px-[6.5%] transition-all duration-300 md:right-0 ${
+            search ? "right-0" : "-right-full"
           }`}
         >
           <form
@@ -36,7 +36,7 @@ export function Navbar() {
           >
             <FiX
               onClick={handleSearch}
-              className="text-lg lg:text-2xl hover:text-slate-600"
+              className="text-lg lg:text-2xl hover:text-slate-600 md:hidden"
             />
             <input
               className="w-full text-sm lg:text-base font-light text-gray-700 px-3 py-[2px] lg:py-1"
