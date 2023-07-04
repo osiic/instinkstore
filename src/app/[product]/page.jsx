@@ -17,7 +17,7 @@ export default async function ProductPage({ params }) {
           alt="loading"
           width="256"
           height="256"
-          className="w-64object-cover"
+          className="w-64 object-cover"
         />
         <h3 className="text-slate-800 text-lg font-normal">
           Kek nya yang kao cari kagak ada
@@ -25,10 +25,10 @@ export default async function ProductPage({ params }) {
       </div>
     );
   }
-  // return (
-  //   <div className="min-h-screen max-w-screen-2xl mx-auto pt-14 lg:pt-15">
-  //     <ProductBar />
-  //     <ProductDetail product={product.data[0]} />
-  //   </div>
-  // );
+   return (
+     <div className="min-h-screen max-w-screen-2xl mx-auto pt-14 lg:pt-15">
+       <ProductBar />
+       <ProductDetail product={product.data[0]} />
+     </div>
+  );
 }
