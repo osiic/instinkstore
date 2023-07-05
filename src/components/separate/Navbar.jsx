@@ -25,12 +25,12 @@ export function Navbar() {
         />
 
         <div
-          className={`absolute w-full md:w-6/12 flex justify-center items-center px-[6.5%] transition-all duration-300 md:right-0 ${
+          className={`absolute w-full md:w-6/12 flex justify-center items-center px-[6.5%] transition-all duration-300   md:right-0 ${
             search ? "right-0" : "-right-full"
           }`}
         >
           <form
-            className="rounded-full border border-gray-600 bg-white flex justify-between items-center w-full gap-2 px-2 "
+            className="rounded-full border border-gray-600 bg-white flex justify-between items-center  w-full gap-2 px-2 md:pl-0 overflow-hidden"
             action="/search"
             method="get"
           >
@@ -39,7 +39,7 @@ export function Navbar() {
               className="text-lg lg:text-2xl hover:text-slate-600 md:hidden"
             />
             <input
-              className="w-full text-sm lg:text-base font-light text-gray-700 px-3 py-[2px] lg:py-1"
+              className="w-full text-sm lg:text-base font-light text-gray-700 px-1 md:px-2 lg:px-3 py-[3px] lg:py-1 md:rounded-s-full "
               required
               name="q"
               placeholder="Cari apa yang kami mau"

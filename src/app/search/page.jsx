@@ -16,7 +16,7 @@ export default async function SearchPage({ params, searchParams }) {
   const products = await getApi(query,{ cache: 'no-store' });
 
   return (
-    <section className="pt-12 lg:pt-14 px-[7%] min-h-screen">
+    <section className="pt-12 lg:pt-14 px-[7%] min-h-[87vh]">
       <h3 className="text-sm md:text-base lg:text-lg font-normal pt-2 pb-1">
         Products:{" "}
         <span className="font-light px-1 lg:px-2 bg-orange-400 rounded-sm lg:rounded text-orange-900">

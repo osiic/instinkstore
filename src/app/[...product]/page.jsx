@@ -5,13 +5,13 @@ import { ProductDetail } from "./ProductDetail";
 
 export default async function ProductPage({ params }) {
   const product = await getApi(
-    `https://instinkstoreapi.onrender.com/api/products?filters[slug][$eq]=${params.product}&populate=*`,
+    `https://instinkstoreapi.onrender.com/api/products?filters[slug][$eq]=${params?.product[0]}&populate=*`,
     { cache: "no-store" }
   );
   
   if (product.data.length == 0) {
     return (
-      <div className="flex flex-col justify-center items-center h-screen gap-2">
+      <div className="flex flex-col justify-center items-center h-[87vh] gap-2">
         <Image
           src="/Loading.gif"
           alt="loading"
