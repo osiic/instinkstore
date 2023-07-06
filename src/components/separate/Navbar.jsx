@@ -12,7 +12,7 @@ export function Navbar() {
   }
 
   return (
-    <section className="fixed z-50 bg-white inset-x-0">
+    <section className="fixed z-10 bg-white inset-x-0">
       <nav className="px-[7%] h-12 lg:h-14 flex justify-between items-center relative">
         <Link href="/">
           <h1 className="text-xl lg:text-2xl text-slate-900 font-semibold">
@@ -25,7 +25,7 @@ export function Navbar() {
         />
 
         <div
-          className={`absolute w-full md:w-6/12 flex justify-center items-center px-[6.5%] transition-all duration-300   md:right-0 ${
+          className={`absolute w-full md:w-6/12 flex justify-center items-center px-[6.5%] transition-all duration-300  md:right-0 ${
             search ? "right-0" : "-right-full"
           }`}
         >
@@ -39,7 +39,7 @@ export function Navbar() {
               className="text-lg lg:text-2xl hover:text-slate-600 md:hidden"
             />
             <input
-              className="w-full text-sm lg:text-base font-light text-gray-700 px-1 md:px-2 lg:px-3 py-[3px] lg:py-1 md:rounded-s-full "
+              className="w-full text-sm lg:text-base font-light text-gray-700 px-1 md:px-3 lg:px-4 py-[3px] lg:py-1 md:rounded-s-full "
               required
               name="q"
               placeholder="Cari apa yang kami mau"

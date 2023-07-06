@@ -73,7 +73,7 @@ export function ProductDetail({ product }) {
 
           <div className="">
             <Select.Root>
-              <Select.Trigger className={`w-full border py-1 lg:text-xl border-slate-800 rounded-md ${product?.attributes?.variants && "hidden" }`}>
+              <Select.Trigger className={`w-full border py-1 lg:text-xl border-slate-800 rounded-md ${product?.attributes?.variants?.data.length == 0 && "hidden" }`}>
                 <Select.Value placeholder="Select a Variant" />
               </Select.Trigger>
 

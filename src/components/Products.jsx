@@ -3,12 +3,27 @@ import Image from "next/image";
 import toRupiah from "@develoka/angka-rupiah-js";
 
 export function Products({ products }) {
-  
   if (!products || products.length == 0) {
-    return <div className="flex flex-col justify-center items-center h-[70vh] gap-2">
-      <Image src="/Loading.gif" alt="loading" width="256" height="256" className="w-64object-cover" />
-      <h3 className="text-slate-800 text-lg font-normal">Kek nya yang kao cari kagak ada</h3>
-    </div>;
+    return (
+      <div className="flex flex-col justify-center items-center h-[70vh] gap-2">
+        <Image
+          src="/Loading.gif"
+          alt="loading"
+          width="256"
+          height="256"
+          className="w-64object-cover"
+        />
+        <h3 className="text-slate-800 text-lg font-normal">
+          Kek nya yang kao cari kagak ada
+        </h3>
+        <Link
+          href="/"
+          className="px-2 py-1 border border-slate-950 rounded-md active:scale-[0.97]"
+        >
+          Kembali ke Home
+        </Link>
+      </div>
+    );
   }
 
   return (
@@ -17,12 +32,15 @@ export function Products({ products }) {
         <Link
           href={"/" + item?.attributes?.slug}
           key={index}
-          className="shadow-2xl rounded-md overflow-hidden hover:scale-105 active:scale-95 transition"
+          className="shadow-2xl rounded-md overflow-hidden hover:scale-[1.03] active:scale-[0.99] transition"
         >
           <Image
             width="150"
             height="150"
-            src={item?.attributes?.image?.data[0]?.attributes?.formats?.thumbnail?.url}
+            src={
+              item?.attributes?.image?.data[0]?.attributes?.formats?.thumbnail
+                ?.url
+            }
             alt={item?.attributes?.title}
             className="aspect-square rounded-md w-full object-cover "
           />
@@ -44,7 +62,8 @@ export function Products({ products }) {
               <p className=" text-slate-500 line-through text-sm font-normal -mt-[0.125rem]">
                 {toRupiah(
                   Math.round(
-                    (item?.attributes?.price / (100 - item?.attributes?.discount)) *
+                    (item?.attributes?.price /
+                      (100 - item?.attributes?.discount)) *
                       100
                   ),
                   { floatingPoint: 0 }
