@@ -29,8 +29,9 @@ export default async function ProductPage({ params }) {
       </section>
     );
   }
+
   return (
-    <div className="min-h-screen max-w-screen-2xl mx-auto pt-14 lg:pt-15">
+    <div className="min-h-screen max-w-screen-2xl mx-auto pt-12 lg:pt-14 xl:pt-16">
       <ProductBar />
       <ProductDetail product={product.data[0]} />
     </div>
