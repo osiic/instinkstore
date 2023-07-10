@@ -26,25 +26,32 @@ export function ProductDetail({ product }) {
           alt={product?.attributes?.title}
           className="w-full h-full aspect-square rounded-md shadow-xl object-cover md:w-[48%] md:order-2 "
         />
-        <p className="text-sm lg:text-base xl:text-lg text-slate-600 truncate w-full md:pb-2 lg:pb-3 xl:pb-4 md:order-1 ">
+        <p className="text-sm lg:text-base xl:text-lg text-gray-600 truncate w-full md:pb-2 lg:pb-3 xl:pb-4 md:order-1 ">
           <Link href="/">Home</Link>
           {" > "}
           <Link
             href={{
-              pathname: "/search",
+              pathname: "/etalase",
               query: {
-                q: product?.attributes?.etalase?.data?.attributes?.nama,
+                q: product?.attributes?.etalase?.data?.attributes?.slug,
               },
             }}
           >
             {product?.attributes?.etalase?.data?.attributes?.nama}
           </Link>
           {" > "}
-          <Link href="/">
+          <Link
+            href={{
+              pathname: "/category",
+              query: {
+                q: product?.attributes?.category?.data?.attributes?.slug,
+              },
+            }}
+          >
             {product?.attributes?.category?.data?.attributes?.name}
           </Link>
           {" > "}
-          <Link href="/">{product?.attributes?.title}</Link>
+          <Link href={`/${product?.attributes?.slug}`}>{product?.attributes?.title}</Link>
         </p>
 
         <div className="md:w-[48%] w-full flex flex-col md:py-4 gap-1 lg:gap-2 xl:gap-3 md:order-3">
