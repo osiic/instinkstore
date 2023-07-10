@@ -35,11 +35,10 @@ export function Products({ products }) {
           className="shadow-2xl rounded-md overflow-hidden hover:scale-[1.03] active:scale-[0.99] transition"
         >
           <Image
-            width="150"
-            height="150"
+            width="500"
+            height="500"
             src={
-              item?.attributes?.image?.data[0]?.attributes?.formats?.thumbnail
-                ?.url
+              item?.attributes?.image?.data[0]?.attributes?.formats?.small?.url
             }
             alt={item?.attributes?.title}
             className="aspect-square rounded-md w-full object-cover "
