@@ -44,7 +44,7 @@ export function Navbar() {
               name="q"
               placeholder="Cari apa yang kami mau"
             />
-            <button type="submit">
+            <button type="submit" title="Search">
               <FiSearch className="text-lg lg:text-2xl hover:text-slate-600" />
             </button>
           </form>
