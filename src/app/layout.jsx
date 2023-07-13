@@ -1,3 +1,4 @@
+import "./style.css";   
 import "tailwindcss/tailwind.css";
 import { Inter } from "next/font/google";
 import { Navbar } from "./../components/separate/Navbar";

@@ -4,7 +4,7 @@ import { getApi } from "@/libs/getApi";
 import { ProductBar } from "./ProductBar";
 import { ProductDetail } from "./ProductDetail";
 
-export default async function ProductPage({ params }) {
+export default async function page({ params }) {
   const product = await getApi(
     `https://instinkstoreapi.onrender.com/api/products?filters[slug][$eq]=${params?.product[0]}&populate=*`,
     { cache: "no-store" }

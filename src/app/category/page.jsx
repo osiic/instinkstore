@@ -1,13 +1,12 @@
 import { getApi } from "@/libs/getApi";
 import { Products } from "@/components/Products";
 
-export default async function SearchPage({ params, searchParams }) {
+export default async function page({ params, searchParams }) {
   const { q = "Mau nyari apa dek?" } = searchParams;
   const search = q.split(" ");
   let query = "";
   
   if (q !== "Mau nyari apa dek?" && q != '' ) {
-    console.log({ q });
     query = "https://instinkstoreapi.onrender.com/api/products?populate=image";
     let queryText = "";
 

@@ -4,7 +4,7 @@ import { HomeProducts } from "./HomeProducts";
 import { HomeGrup } from "./HomeGrup";
 
 
-export default async function Home() {
+export default async function page() {
   const banners = await getApi('https://instinkstoreapi.onrender.com/api/banners?populate=image')
   
   return (
